@@ -1,6 +1,6 @@
 #!/bin/bash
 usage=$(df / | tail -1 | awk '{print $5}' | tr -d '%')
-if [ "$usage" -gt 0 ]; then
+if [ "$usage" -gt 95 ]; then
     echo "CRITICAL: disk is ${usage}% full"
     exit 1
 else
